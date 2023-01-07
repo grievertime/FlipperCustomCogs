@@ -1,4 +1,4 @@
-from redbot.core import commands, modlog
+from redbot.core import commands, modlog, checks
 import discord
 
 
@@ -10,15 +10,25 @@ class ModLogAuxCog(commands.Cog):
         self.bot = bot
 
     @commands.command()
+    @checks.admin_or_permissions(ban_members=True)
     async def killcount(self, ctx):
         """Gets the killcount on the server"""
         moderators_killcount = {}
         for log in await modlog.get_all_cases(ctx.guild, self.bot):
+            action_type = log.action_type
             if not log.moderator is None:
                 if not log.moderator.name in moderators_killcount:
-                    moderators_killcount[log.moderator.name] = 0
-                moderators_killcount[log.moderator.name] += 1
+                    moderators_killcount[log.moderator.name] = {}
+                if not action_type in moderators_killcount[log.moderator.name]:
+                    moderators_killcount[log.moderator.name][action_type] = 0
 
-        output_text = '\n'.join((kc +" killcount:"+str(moderators_killcount[kc])) for kc in moderators_killcount)
+                moderators_killcount[log.moderator.name][action_type] += 1
+
+        output_text = ''
+        for mod in moderators_killcount:
+            for act in moderators_killcount[mod]:
+                output_text += mod + " has issued a total of #"+str(moderators_killcount[mod][act]) +" "+  act
+
+     
 
         await ctx.send(output_text)
