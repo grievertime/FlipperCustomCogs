@@ -1,8 +1,12 @@
 {
     "author" : ["Griever (Griever#2283)"],
-    "install_msg" : "",
+    "install_msg" : "Thank you for installing. This cog will allow for tallying up the actions on a per mod basis from the modlog",
     "name" : "",
-    "short" : "",
-    "description" : "",
-    "tags" : [""]
+    "short" : "Tally up mod actions to see who has the most actions!",
+    "description" : "adds a [p]killcount command usable by only moderators to tally up modlog actions",
+    "tags" : ["moderation"],
+    "min_bot_version": "3.4.0",
+    "max_bot_version": "3.4.99",
+    "type": "COG",
+    "end_user_data_statement": "This cog does not store end user data."
 }
