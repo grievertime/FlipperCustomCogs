@@ -27,7 +27,7 @@ class ModLogAuxCog(commands.Cog):
         output_text = ''
         for mod in moderators_killcount:
             for act in moderators_killcount[mod]:
-                output_text += mod + " has issued a total of #"+str(moderators_killcount[mod][act]) +" "+  act
+                output_text += mod + " has issued a total of #"+str(moderators_killcount[mod][act]) +" "+  act + '\n'
 
      
 
