@@ -3,7 +3,7 @@ import discord
 
 
 # Classname should be CamelCase and the same spelling as the folder
-class ModLogAuxCog(commands.Cog):
+class ModlogKillcount(commands.Cog):
     """Aux modlog cog for handling various custom commands"""
  
     def __init__(self, bot):
