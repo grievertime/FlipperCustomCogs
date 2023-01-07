@@ -14,9 +14,10 @@ class ModLogAuxCog(commands.Cog):
         """Gets the killcount on the server"""
         moderators_killcount = {}
         for log in await modlog.get_all_cases(ctx.guild, self.bot):
-            if not log.moderator.name in moderators_killcount:
-                moderators_killcount[log.moderator.name] = 0
-            moderators_killcount[log.moderator.name] += 1
+            if not log.moderator is None:
+                if not log.moderator.name in moderators_killcount:
+                    moderators_killcount[log.moderator.name] = 0
+                moderators_killcount[log.moderator.name] += 1
 
         output_text = '\n'.join((kc +" killcount:"+str(moderators_killcount[kc])) for kc in moderators_killcount)
 

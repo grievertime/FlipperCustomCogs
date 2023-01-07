@@ -1,2 +1,3 @@
 /docker-compose.yml
 redbot/
+__pycache__/
