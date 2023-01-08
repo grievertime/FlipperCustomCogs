@@ -1,8 +1,8 @@
 {
     "author" : ["Griever (Griever#2283)"],
-    "install_msg" : "",
-    "name" : "",
-    "short" : "",
-    "description" : "",
+    "install_msg" : "Welcome to Flipper Custom Cogs, If any bugs are found, contact Griever#2283 or axum#6461 in the Flppper Discord.",
+    "name" : "FlipperCustomCogs",
+    "short" : "random cogs for Flipper Discord",
+    "description" : "Cogs created as needed for use in the Flipper Zero Discord",
     "tags" : [""]
 }
